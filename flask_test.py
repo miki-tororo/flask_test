@@ -37,7 +37,10 @@ def result():
         article=request.args.get("article")
         name=request.args.get("name")
 
-
+        #a is add_text_mode
+    file=codecs.open("articles.txt","a","utf-8")
+    file.write("\n" + article + "," + name + "\n")
+    file.close()
 
     return render_template("result.html",text=text,article=article,name=name)
 
