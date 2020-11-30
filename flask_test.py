@@ -1,13 +1,35 @@
 from flask import Flask,render_template,request
 import codecs
+import psycopg2
+
 
 app=Flask(__name__)
+"""
+def getConnection():
+     # connect postgreSQL
+    users = 'postgres'
+    dbnames = 'flask'
+    passwords = 'postgres'
+    #host、port are not need on local
 
+    return psycopg2.connect(" user=" + users +" dbname=" + dbnames +" password=" + passwords)
+"""
 
 @app.route("/")
 def hello_world():
-    name_list=["a","b","c"]
+    """
+    conn=getConnection()
+    # excexute sql
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM Test;')
+    results = cur.fetchall()
 
+    cur.close()
+    conn.close()
+
+    print(results)
+    """
+    name_list=[1,2,3]
     return render_template("index.html",name_list=name_list)
 
 @app.route("/form")

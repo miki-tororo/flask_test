@@ -19,12 +19,15 @@ cur = conn.cursor()
 cur.execute('SELECT * FROM Test;')
 results = cur.fetchall()
 
+
+
+cur.close()
+conn.close()
+
+
 #output result
 print(results)
 for i in results:
     print(i)
     for j in i:
         print(j)
-
-cur.close()
-conn.close()
