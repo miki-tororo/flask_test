@@ -1,0 +1,18 @@
+#table create
+
+create table Test
+(id CHAR(4) not null,
+article varchar(1000),
+name varchar(100),
+primary key (id));
+
+
+#data insert
+insert into Test
+(id,article,name)
+values
+(,,,)
+
+
+
+
