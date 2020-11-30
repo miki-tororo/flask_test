@@ -2,21 +2,12 @@
 {% block content %}
 
 		<p>{{text}}</p>
+	<p>{{name}}</p>
+	<p>{{article}}</p>
 
-		<form action="/result" method="post">
-			<label for="article">投稿</label>
-			<input type="text" name="article">
-			<p></p>
-			<label for="name">name</label>
-			<input type="text" name="name">
-			<button type="submit">submit</button>
-
-
-		</form>
-<p>{{name}}</p>
-<p>{{article}}</p>
-
-
+<form action="/form" method="get">
+		<button type="submit">戻る</button>
+</form>
 
 
 
