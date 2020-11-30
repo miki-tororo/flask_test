@@ -4,7 +4,7 @@ import psycopg2
 
 
 app=Flask(__name__)
-"""
+
 def getConnection():
      # connect postgreSQL
     users = 'postgres'
@@ -13,11 +13,11 @@ def getConnection():
     #host、port are not need on local
 
     return psycopg2.connect(" user=" + users +" dbname=" + dbnames +" password=" + passwords)
-"""
+
 
 @app.route("/")
 def hello_world():
-    """
+
     conn=getConnection()
     # excexute sql
     cur = conn.cursor()
@@ -28,9 +28,9 @@ def hello_world():
     conn.close()
 
     print(results)
-    """
+
     name_list=[1,2,3]
-    return render_template("index.html",name_list=name_list)
+    return render_template("index.html",name_list=name_list,results=results)
 
 @app.route("/form")
 def form():
